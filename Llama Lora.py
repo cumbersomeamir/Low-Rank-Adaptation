@@ -92,4 +92,4 @@ trainer.train()
 
 #Saving the Model on huggingface
 token = "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"
-model.push_to_hub("Amirkid/LlamaJoke", use_auth_token=True)
+model.push_to_hub("Amirkid/LlamaJoke", use_auth_token=token)
