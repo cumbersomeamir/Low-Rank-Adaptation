@@ -16,6 +16,7 @@ model = LlamaForCausalLM.from_pretrained(
     device_map='auto',
 )
 tokenizer = LlamaTokenizer.from_pretrained("huggyllama/llama-7b")
+tokenizer.pad_token = tokenizer.eos_token
 #Post-Processing
 for param in model.parameters():
   param.requires_grad = False  # freeze the model - train adapters later
