@@ -1,4 +1,4 @@
-'''Dependencies to install senterpiece,datasets, bitsandbytes datasets accelerate loralib , git+https://github.com/huggingface/transformers.git@main git+https://github.com/huggingface/peft.git
+'''!pip3 install sentencepiece datasets bitsandbytes accelerate loralib git+https://github.com/huggingface/transformers.git@main git+https://github.com/huggingface/peft.git
 '''
 
 #Model Loading
@@ -77,7 +77,7 @@ trainer = transformers.Trainer(
         per_device_train_batch_size=4,
         gradient_accumulation_steps=4,
         warmup_steps=100,
-        max_steps=200,
+        max_steps=10,
         learning_rate=2e-4,
         fp16=True,
         logging_steps=1,
@@ -90,7 +90,5 @@ trainer.train()
 
 
 #Saving the Model on huggingface
-from huggingface_hub import notebook_login
-
-notebook_login()
+token = "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"
 model.push_to_hub("Amirkid/LlamaJoke", use_auth_token=True)
