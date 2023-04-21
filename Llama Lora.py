@@ -65,7 +65,7 @@ print_trainable_parameters(model)
 import transformers
 from datasets import load_dataset
 data = load_dataset("Amirkid/reddit")
-data = data.map(lambda samples: tokenizer(samples['quote']), batched=True)
+data = data.map(lambda samples: tokenizer(samples['text']), batched=True)
 
 
 #Training the model
